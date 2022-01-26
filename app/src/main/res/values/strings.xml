@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Versal</string>
+    <string name="theme_attribute">theme</string>
+    <string name="about_text">Versal app is developed by Innocent Kumwenda owner of Ikay Developments</string>
+    <string name="company_email">ikaydevelopment@gmail.com</string>
+    <string name="alert_no_internet_title">Connectivity</string>
+    <string name="alert_no_internet_connection_information">Make sure you are connected to the internet</string>
+</resources>

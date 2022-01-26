@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".activities.MainActivity"
+    tools:menu="@menu/main_menu">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonShareLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_share_24"
+        android:theme="@style/FloatingButton"
+        android:visibility="gone"
+        app:backgroundTint="@color/dark_green" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/constraintLayoutMain"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="162dp"
+                        android:background="@drawable/background_shape5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbarMain"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/opacity"
+                            android:minHeight="?attr/actionBarSize"
+                            android:theme="@style/Theme.ToolbarTheme_v19"
+                            app:subtitleTextColor="#1E1C1C"
+                            app:titleTextColor="#494444" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="37dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/favIconCircularImageView"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/url_logo"
+                                app:civ_border_color="#FFFFFF" />
+
+                            <TextView
+                                android:id="@+id/textViewUrlHostName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:textColor="#FFFFFF"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relative_layout_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+                        <RelativeLayout
+                            android:id="@+id/RelativeLayoutNewLink"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginRight="30dp">
+
+                            <EditText
+                                android:id="@+id/editTextGeneratedLink"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/edit_textbg"
+                                android:clickable="false"
+                                android:editable="false"
+                                android:fontFamily="@font/roboto_light"
+                                android:hint="Copy the newly generated link"
+                                android:paddingLeft="14dp"
+                                android:paddingRight="45dp"
+                                android:textColor="#000000"
+                                android:textColorHint="#74857878"
+                                android:textSize="14sp"
+                                app:textInputLayoutFocusedRectEnabled="false">
+
+                            </EditText>
+
+                            <Button
+                                android:id="@+id/buttonCancelCopyText"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_toLeftOf="@id/buttonCopy"
+                                android:background="@drawable/ic_cancel_24"
+                                android:textColorHighlight="#FFFFFF"
+                                android:visibility="gone" />
+
+                            <Button
+                                android:id="@+id/buttonCopy"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@drawable/icon_copy_24" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/RelativeLayoutPasteLink"
+                            android:layout_width="wrap_content"
+                            android:layout_height="83dp"
+                            android:layout_below="@id/RelativeLayoutNewLink"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="55dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginRight="30dp">
+
+                            <EditText
+                                android:id="@+id/editTextPasteLink"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:background="@drawable/edit_textbg"
+                                android:clickable="false"
+                                android:fontFamily="@font/roboto_light"
+                                android:hint="Write or Paste a link here (e.g. www.bing.com)"
+                                android:maxLines="1"
+                                android:paddingLeft="14dp"
+                                android:paddingRight="45dp"
+                                android:singleLine="true"
+                                android:textAppearance="@style/EditTextNight"
+                                android:textColor="#000000"
+                                android:textColorHint="#74857878"
+                                android:textSize="14sp"
+                                app:textInputLayoutFocusedRectEnabled="false">
+
+                            </EditText>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutErrorInURL"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/editTextPasteLink"
+                                android:layout_marginTop="12dp"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textViewErrorInURL"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="#4FFF1D1D"
+                                    android:fontFamily="@font/roboto_light"
+                                    android:textColor="@color/error_red"
+                                    android:textSize="10sp" />
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/buttonPaste"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:background="@drawable/icon_paste_24" />
+
+                            <Button
+                                android:id="@+id/buttonCancelPasteText"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginTop="12dp"
+                                android:layout_marginEnd="6dp"
+                                android:layout_marginRight="6dp"
+                                android:layout_toLeftOf="@id/buttonPaste"
+                                android:background="@drawable/ic_cancel_24"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/RelativeLayoutPasteLink"
+                            android:layout_marginTop="30dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <Button
+                                android:id="@+id/GenerateButton"
+                                android:layout_width="210dp"
+                                android:layout_height="60dp"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Generate"
+                                android:textAllCaps="false" />
+
+                            <com.tt.whorlviewlibrary.WhorlView
+                                android:id="@+id/whorl2ProgressViewGenerate"
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_marginTop="12dp"
+                                android:visibility="gone"
+                                app:whorlview_circle_colors="#F14336_#ffffff_#5677fc_#F44336_#4CAF50"
+                                app:whorlview_circle_speed="270"
+                                app:whorlview_parallax="fast"
+                                app:whorlview_strokeWidth="6"
+                                app:whorlview_sweepAngle="90"></com.tt.whorlviewlibrary.WhorlView>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
